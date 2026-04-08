@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DetectionApp — Buffer Overflow</title>
+    <link rel="stylesheet" href="/static/app.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <header class="header">
+        <div>
+          <h2>Détection de risques de buffer overflow</h2>
+          <p class="sub">Analyse statique offline (C/C++ via libclang, Python via AST). Entrée: un seul fichier.</p>
+        </div>
+      </header>
+
+      <section class="panel">
+        <div class="row">
+          <label class="label">
+            Langage
+            <select id="lang" class="select">
+              <option value="c">C</option>
+              <option value="cpp">C++</option>
+              <option value="python">Python</option>
+            </select>
+          </label>
+
+          <div class="actions">
+            <button id="analyzeBtn" class="btn primary">Analyser</button>
+            <button id="downloadJsonBtn" class="btn" disabled>Télécharger JSON</button>
+            <button id="openHtmlBtn" class="btn" disabled>Ouvrir rapport HTML</button>
+          </div>
+        </div>
+
+        <label class="label">
+          Code source
+          <textarea id="code" class="textarea" spellcheck="false" placeholder="Colle ton code ici..."></textarea>
+        </label>
+      </section>
+
+      <section class="panel">
+        <div class="row">
+          <h3>Résultats</h3>
+          <div id="summary" class="summary">En attente.</div>
+        </div>
+        <div id="results" class="results"></div>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
+
